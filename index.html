@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="title">
+            <h1>Oblicz swój wskaźnik BMI</h1>
+        </div>
+        <div class="content">
+            <label for="growth">Podaj wzrost:</label>
+            <small>(w centymetrach)</small>
+            <input type="number" id="growth"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="3" placeholder="Wzrost...">
+
+            <label for="weight">Podaj wagę:</label>
+            <small>(w kilogramach)</small>
+            <input type="number" id="weight"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="3" placeholder="Waga...">
+
+            <label for="sex">Wybierz płeć:</label>
+            <select id="sex">
+                <option value="none" disabled selected>-- wybierz płeć --</option>
+                <option value="woman">Kobieta</option>
+                <option value="man">Mężczyzna</option>
+            </select>
+            <div class="buttons">
+                <button class="count">Oblicz BMI</button>
+                <button class="clear">Wyczyść</button>
+            </div>
+            <p class="error"></p>
+            <p class="bmi"></p>
+            <p class="result">Twój wksaźnik BMI oznacza <span class="check"></span></p>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
